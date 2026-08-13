@@ -48,6 +48,7 @@ class AccountsRepositoryTest {
         customer.setName("Test Customer");
         customer.setEmail("test@example.com");
         customer.setMobileNumber("1234567890");
+        customer.setTenantId("test-tenant");
 
         Customer savedCustomer = customerRepository.save(customer);
 
@@ -64,6 +65,7 @@ class AccountsRepositoryTest {
         customer.setName("Test Customer");
         customer.setEmail("test@example.com");
         customer.setMobileNumber("1234567890");
+        customer.setTenantId("test-tenant");
         Customer savedCustomer = customerRepository.save(customer);
 
         Accounts account = new Accounts();
@@ -72,6 +74,7 @@ class AccountsRepositoryTest {
         account.setAccountType("Savings");
         account.setBranchAddress("123 Main Street");
         account.setCommunicationSw(false);
+        account.setTenantId("test-tenant");
         accountsRepository.save(account);
 
         Optional<Accounts> found = accountsRepository.findByCustomerId(savedCustomer.getCustomerId());
