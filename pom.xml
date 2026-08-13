@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.eazybytes</groupId>
+    <artifactId>eazybank</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>eazybank</name>
+    <description>EazyBank Microservices — Production Starter</description>
+
+    <modules>
+        <module>eazy-bom</module>
+        <module>eazy-common</module>
+        <module>eazy-common-test</module>
+        <module>services/configserver</module>
+        <module>services/discoveryserver</module>
+        <module>services/gatewayserver</module>
+        <module>services/accounts</module>
+        <module>services/cards</module>
+        <module>services/loans</module>
+        <module>services/message</module>
+    </modules>
+
+</project>

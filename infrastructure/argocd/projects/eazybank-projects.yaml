@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: eazybank-dev
+  namespace: argocd
+spec:
+  description: EazyBank development environment
+  sourceRepos:
+    - https://github.com/eazybytes/microservices.git
+  destinations:
+    - namespace: eazybank-dev
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: eazybank-prod
+  namespace: argocd
+spec:
+  description: EazyBank production environment
+  sourceRepos:
+    - https://github.com/eazybytes/microservices.git
+  destinations:
+    - namespace: eazybank-prod
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"

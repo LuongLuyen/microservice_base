@@ -1,0 +1,29 @@
+apiVersion: v2
+name: eazybank-services
+description: EazyBank microservices umbrella chart
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: accounts
+    version: 1.0.0
+    repository: file://./accounts
+  - name: cards
+    version: 1.0.0
+    repository: file://./cards
+  - name: loans
+    version: 1.0.0
+    repository: file://./loans
+  - name: configserver
+    version: 1.0.0
+    repository: file://./configserver
+  - name: discoveryserver
+    version: 1.0.0
+    repository: file://./discoveryserver
+  - name: gatewayserver
+    version: 1.0.0
+    repository: file://./gatewayserver
+  - name: message
+    version: 1.0.0
+    repository: file://./message

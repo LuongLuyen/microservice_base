@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: eazybank-dev-apps
+  namespace: argocd
+spec:
+  project: eazybank-dev
+  source:
+    repoURL: https://github.com/eazybytes/microservices.git
+    targetRevision: main
+    path: infrastructure/helm/eazybank-services
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: eazybank-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
