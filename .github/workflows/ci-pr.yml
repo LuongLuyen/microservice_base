@@ -43,7 +43,7 @@ jobs:
           cache: maven
 
       - name: Spotless format check
-        run: mvn spotless:check
+        run: mvn -f eazy-bom/pom.xml spotless:check
 
       - name: Checkstyle
-        run: mvn checkstyle:check
+        run: mvn -f eazy-bom/pom.xml checkstyle:check
